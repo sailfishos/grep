@@ -23,6 +23,7 @@ Patch15: grep-mem-exhausted.patch
 Patch16: grep-empty-pattern.patch
 Patch17: grep-2.5.1a-pcrewrap.patch
 Patch18: grep-2.5.1a-utf8.patch
+Patch19: grep-aarch64.patch
 URL: http://www.gnu.org/software/grep/
 BuildRequires: pcre-devel >= 3.9-10, texinfo, gettext
 
@@ -54,6 +55,8 @@ utility for searching through text.
 %patch16 -p1 -b .empty-pattern
 %patch17 -p1 -b .pcrewrap
 %patch18 -p1 -b .utf8
+%patch19 -p1
+
 chmod a+x tests/fmbtest.sh
 chmod a+x tests/pcrewrap.sh
 

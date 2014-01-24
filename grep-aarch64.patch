@@ -1,0 +1,19 @@
+diff -urN findutils-4.5.10/config.sub findutils-4.5.10-aarch64/config.sub
+--- findutils-4.5.10/config.sub	2011-04-02 09:52:06.000000000 -0600
++++ findutils-4.5.10-aarch64/config.sub	2012-10-09 11:22:04.715462954 -0600
+@@ -247,6 +247,7 @@
+ 	# Some are omitted here because they have special meanings below.
+ 	1750a | 580 \
+ 	| a29k \
++        | aarch64 | aarch64_be \
+ 	| alpha | alphaev[4-8] | alphaev56 | alphaev6[78] | alphapca5[67] \
+ 	| alpha64 | alpha64ev[4-8] | alpha64ev56 | alpha64ev6[78] | alpha64pca5[67] \
+ 	| am33_2.0 \
+@@ -351,6 +352,7 @@
+ 	# Recognize the basic CPU types with company name.
+ 	580-* \
+ 	| a29k-* \
++        | aarch64-* | aarch64_be-* \
+ 	| alpha-* | alphaev[4-8]-* | alphaev56-* | alphaev6[78]-* \
+ 	| alpha64-* | alpha64ev[4-8]-* | alpha64ev56-* | alpha64ev6[78]-* \
+ 	| alphapca5[67]-* | alpha64pca5[67]-* | arc-* \
