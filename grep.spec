@@ -2,7 +2,7 @@ Summary: The GNU versions of grep pattern matching utilities
 Name: grep
 Version: 2.5.1a
 Epoch: 1
-Release: 61
+Release: 62
 License: GPLv2+
 Group: Applications/Text
 Source: ftp://ftp.gnu.org/pub/gnu/grep/grep-%{version}.tar.bz2
@@ -35,6 +35,15 @@ include grep, egrep and fgrep.
 
 You should install grep on your system, because it is a very useful
 utility for searching through text.
+
+%package doc
+Summary:   Documentation for %{name}
+Group:     Documentation
+Requires:  %{name} = %{version}-%{release}
+Obsoletes: %{name}-docs
+
+%description doc
+Man and info pages for %{name}.
 
 %prep
 %setup -q
@@ -84,12 +93,14 @@ make check
 %clean
 rm -rf ${RPM_BUILD_ROOT}
 
-%docs_package
-
 %lang_package
 
 %files
 %defattr(-,root,root)
-%doc COPYING
+%license COPYING
 /bin/*
 
+%files doc
+%defattr(-,root,root)
+%{_infodir}/%{name}.*
+%{_mandir}/man1/*%{name}.*
