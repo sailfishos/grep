@@ -2,7 +2,7 @@ Summary: The GNU versions of grep pattern matching utilities
 Name: grep
 Version: 2.5.1a
 Epoch: 1
-Release: 62
+Release: 63
 License: GPLv2+
 Group: Applications/Text
 Source: ftp://ftp.gnu.org/pub/gnu/grep/grep-%{version}.tar.bz2
@@ -25,6 +25,7 @@ Patch17: grep-2.5.1a-pcrewrap.patch
 Patch18: grep-2.5.1a-utf8.patch
 Patch19: grep-aarch64.patch
 URL: http://www.gnu.org/software/grep/
+Provides: gnu-grep
 BuildRequires: pcre-devel >= 3.9-10, texinfo, gettext
 
 %description
