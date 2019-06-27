@@ -78,14 +78,11 @@ make %{?_smp_mflags}
 %install
 rm -rf ${RPM_BUILD_ROOT}
 make %{?_smp_mflags} DESTDIR=$RPM_BUILD_ROOT install
-mkdir -p $RPM_BUILD_ROOT/bin
-mv -f $RPM_BUILD_ROOT%{_bindir}/* $RPM_BUILD_ROOT/bin
-rm -rf $RPM_BUILD_ROOT%{_bindir}
 rm -f $RPM_BUILD_ROOT%{_infodir}/dir
 
 # Use symlinks for egrep and fgrep
-ln -sf grep $RPM_BUILD_ROOT/bin/egrep
-ln -sf grep $RPM_BUILD_ROOT/bin/fgrep
+ln -sf grep $RPM_BUILD_ROOT%{_bindir}/egrep
+ln -sf grep $RPM_BUILD_ROOT%{_bindir}/fgrep
 
 %find_lang %name
 %check
@@ -99,7 +96,7 @@ rm -rf ${RPM_BUILD_ROOT}
 %files
 %defattr(-,root,root)
 %license COPYING
-/bin/*
+%{_bindir}/*
 
 %files doc
 %defattr(-,root,root)

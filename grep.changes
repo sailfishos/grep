@@ -1,4 +1,4 @@
-* Thu jan 10 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 2.5.1a-63
+* Thu Jan 10 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 2.5.1a-63
 - [packaging] Provide gnu-grep. Contributes to JB#40843
 
 * Thu Jan 03 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 2.5.1a-62
@@ -357,7 +357,7 @@
 * Wed Oct 20 1999 Bill Nottingham <notting@redhat.com>
 - prereq install-info
 
-* Sun Mar 21 1999 Cristian Gafton <gafton@redhat.com> 
+* Sun Mar 21 1999 Cristian Gafton <gafton@redhat.com>
 - auto rebuild in the new build environment (release 2)
 
 * Mon Mar 08 1999 Preston Brown <pbrown@redhat.com>
