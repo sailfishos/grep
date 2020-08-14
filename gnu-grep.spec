@@ -1,11 +1,11 @@
 Summary: The GNU versions of grep pattern matching utilities
-Name: grep
-Version: 2.5.1a
-Epoch: 1
-Release: 64
+%define _name grep
+Name: gnu-%{_name}
+Version: 2.5.1a+git1
+Release: 0
 License: GPLv2+
 Group: Applications/Text
-Source: ftp://ftp.gnu.org/pub/gnu/grep/grep-%{version}.tar.bz2
+Source: grep-2.5.1a.tar.bz2
 Patch0: grep-2.5.1-fgrep.patch
 Patch1: grep-2.5.1-bracket.patch
 Patch2: grep-2.5-i18n.patch
@@ -25,8 +25,9 @@ Patch17: grep-2.5.1a-pcrewrap.patch
 Patch18: grep-2.5.1a-utf8.patch
 Patch19: grep-aarch64.patch
 URL: http://www.gnu.org/software/grep/
-Provides: gnu-grep
 BuildRequires: pcre-devel >= 3.9-10, gettext
+Obsoletes: %{_name} < 1:2.5.1a+git1
+Provides: %{_name} = 1:2.5.1a+git1
 
 %description
 The GNU versions of commonly used grep utilities.  Grep searches
@@ -41,31 +42,20 @@ utility for searching through text.
 Summary:   Documentation for %{name}
 Group:     Documentation
 Requires:  %{name} = %{version}-%{release}
-Obsoletes: %{name}-docs
+Obsoletes: %{_name}-docs < 1:2.5.1a+git1
+Provides: %{_name}-docs = 1:2.5.1a+git1
 
 %description doc
 Man and info pages for %{name}.
 
+%package locale
+Summary: Translations and Locale for package %{name}
+
+%description locale
+This package provides translations for package %{name}.
+
 %prep
-%setup -q
-%patch0 -p1 -b .fgrep
-%patch1 -p1 -b .bracket
-%patch2 -p1 -b .i18n
-%patch3 -p1 -b .oi
-%patch4 -p1 -b .manpage
-%patch5 -p1 -b .color
-%patch6 -p1 -b .icolor
-%patch7 -p1 -b .skip
-%patch10 -p1 -b .egf-speedup
-%patch11 -p1 -b .dfa-optional
-%patch12 -p1 -b .tests
-%patch13 -p1 -b .w
-%patch14 -p1 -b .P
-%patch15 -p1 -b .mem-exhausted
-%patch16 -p1 -b .empty-pattern
-%patch17 -p1 -b .pcrewrap
-%patch18 -p1 -b .utf8
-%patch19 -p1
+%autosetup -p1 -n grep-2.5.1a
 
 chmod a+x tests/fmbtest.sh
 chmod a+x tests/pcrewrap.sh
@@ -87,14 +77,15 @@ rm -f $RPM_BUILD_ROOT%{_infodir}/dir
 ln -sf grep $RPM_BUILD_ROOT/bin/egrep
 ln -sf grep $RPM_BUILD_ROOT/bin/fgrep
 
-%find_lang %name
+%find_lang %{_name}
 %check
 make check
 
 %clean
 rm -rf ${RPM_BUILD_ROOT}
 
-%lang_package
+%files locale -f %{_name}.lang
+%defattr(-,root,root,-)
 
 %files
 %defattr(-,root,root)
@@ -103,5 +94,5 @@ rm -rf ${RPM_BUILD_ROOT}
 
 %files doc
 %defattr(-,root,root)
-%{_infodir}/%{name}.*
-%{_mandir}/man1/*%{name}.*
+%{_infodir}/%{_name}.*
+%{_mandir}/man1/*%{_name}.*
