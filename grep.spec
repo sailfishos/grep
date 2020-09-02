@@ -26,7 +26,7 @@ Patch18: grep-2.5.1a-utf8.patch
 Patch19: grep-aarch64.patch
 URL: http://www.gnu.org/software/grep/
 Provides: gnu-grep
-BuildRequires: pcre-devel >= 3.9-10, texinfo, gettext
+BuildRequires: pcre-devel >= 3.9-10, gettext
 
 %description
 The GNU versions of commonly used grep utilities.  Grep searches
