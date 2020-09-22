@@ -4,7 +4,6 @@ Name: gnu-%{_name}
 Version: 2.5.1a+git1
 Release: 0
 License: GPLv2+
-Group: Applications/Text
 Source: grep-2.5.1a.tar.bz2
 Patch0: grep-2.5.1-fgrep.patch
 Patch1: grep-2.5.1-bracket.patch
@@ -40,7 +39,6 @@ utility for searching through text.
 
 %package doc
 Summary:   Documentation for %{name}
-Group:     Documentation
 Requires:  %{name} = %{version}-%{release}
 Obsoletes: %{_name}-docs < 1:2.5.1a+git1
 Provides: %{_name}-docs = 1:2.5.1a+git1
@@ -80,9 +78,6 @@ ln -sf grep $RPM_BUILD_ROOT/bin/fgrep
 %find_lang %{_name}
 %check
 make check
-
-%clean
-rm -rf ${RPM_BUILD_ROOT}
 
 %files locale -f %{_name}.lang
 %defattr(-,root,root,-)
