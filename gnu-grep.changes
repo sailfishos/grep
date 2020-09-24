@@ -1,7 +1,10 @@
+* Tue Sep 22 2020 Björn Bidar <bjorn.bidar@jolla.com> - 2.5.1a+git1
+- [packaging] Rename grep to gnu-grep. JB#49334
+
 * Tue Jun 23 2020 Marko Lemmetty <marko.lemmetty@jollamobile.com> - 2.5.1a-64
 - [grep] Drop texinfo from build requires. JB#48964
 
-* Thu jan 10 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 2.5.1a-63
+* Thu Jan 10 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 2.5.1a-63
 - [packaging] Provide gnu-grep. Contributes to JB#40843
 
 * Thu Jan 03 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 2.5.1a-62
