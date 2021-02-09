@@ -51,6 +51,7 @@ Source41: uk.po
 Source42: vi.po
 Source43: zh_CN.po
 Source44: zh_TW.po
+Source45: polist.inc
 URL: http://www.gnu.org/software/grep/
 BuildRequires: pcre-devel >= 3.9-10, gettext
 BuildRequires: rsync
