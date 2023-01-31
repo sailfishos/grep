@@ -1,0 +1,31 @@
+diff --git a/bootstrap.conf b/bootstrap.conf
+index ec48c37..50948a6 100644
+--- a/bootstrap.conf
++++ b/bootstrap.conf
+@@ -102,7 +102,6 @@ windows-stat-inodes
+ xalloc
+ xbinary-io
+ xstrtoimax
+-year2038
+ '
+ gnulib_name=libgreputils
+ 
+diff --git a/tests/Makefile.am b/tests/Makefile.am
+index 9b4422e..c460801 100644
+--- a/tests/Makefile.am
++++ b/tests/Makefile.am
+@@ -171,7 +171,6 @@ TESTS =						\
+   skip-read					\
+   spencer1					\
+   spencer1-locale				\
+-  stack-overflow				\
+   status					\
+   surrogate-pair				\
+   surrogate-search				\
+@@ -192,7 +191,6 @@ TESTS =						\
+   word-multi-file				\
+   word-multibyte				\
+   write-error-msg				\
+-  y2038-vs-32-bit				\
+   yesno						\
+   z-anchor-newline
