@@ -3,9 +3,9 @@
 Summary: The GNU versions of grep pattern matching utilities
 %define _name grep
 Name: gnu-%{_name}
-Version: 3.6
+Version: 3.11
 Release: 0
-License: GPLv2+
+License: GPLv3+
 Source: %{name}-%{version}.tar.bz2
 Source1: posync.sh
 Source2: af.po
@@ -52,6 +52,8 @@ Source42: vi.po
 Source43: zh_CN.po
 Source44: zh_TW.po
 Source45: polist.inc
+Patch0: grep-3.11-tests-drop.patch
+Patch1: grep-3.11-gnulib-tests-drop.patch
 URL: http://www.gnu.org/software/grep/
 BuildRequires: pcre-devel >= 3.9-10, gettext
 BuildRequires: rsync
@@ -111,7 +113,7 @@ echo %{version} > .tarball-version
             --gnulib-srcdir=gnulib \
             --skip-po
 
-%configure --without-included-regex \
+%configure \
            CFLAGS="-I%{_includedir}/pcre" \
            CFLAGS="$RPM_OPT_FLAGS"
 
