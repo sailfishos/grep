@@ -57,7 +57,8 @@ Source47: polist.inc
 Patch0: grep-3.11-tests-drop.patch
 Patch1: grep-3.11-gnulib-tests-drop.patch
 URL: http://www.gnu.org/software/grep/
-BuildRequires: pcre-devel >= 3.9-10, gettext
+BuildRequires: gettext
+BuildRequires: pkgconfig(libpcre2-8)
 BuildRequires: rsync
 BuildRequires: gperf
 %{?with_doc:BuildRequires texinfo}
